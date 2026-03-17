@@ -1,0 +1,18 @@
+# URMA — User Risk Monitoring Agent
+ 
+Detects fake accounts, bots, and suspicious activity on a job application platform using AI.
+ 
+## What it does
+Analyzes user behavior data and uses Gemini to assign a risk score, level, and flag reason to each user. High-risk users automatically trigger alerts.
+ 
+## Backend — FastAPI + NeonDB + Gemini
+Three endpoints:
+- `GET /users` — returns all users sorted by risk score
+- `POST /scan` — runs Gemini analysis on all users and writes results back to DB
+- `GET /alerts` — returns all unresolved alerts
+ 
+## Frontend — React
+- Metric cards showing total, high, medium, and clean user status
+- User table with risk scores, levels, signals, and flag reasons
+- Alerts panel showing auto-generated high-risk alerts
+- "Run AI scan" button triggers the backend scan of database and refreshes the dashboard
