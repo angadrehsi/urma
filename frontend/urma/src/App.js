@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 const API = process.env.REACT_APP_BACKEND;
+console.log(process.env.REACT_APP_BACKEND)
 
 function timeAgo(ts) {
   if (!ts) return "—";
